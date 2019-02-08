@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ImagePractice</string>
+    <string name="movie_title">Movie Title</string>
+    <string name="download_type">Download Type</string>
+    <string name="http_url_connection">HTTP URL Connection</string>
+    <string name="fresco">Fresco</string>
+    <string name="picasso">Picasso</string>
+    <string name="glide">Glide</string>
+    <string name="todo">TODO</string>
+</resources>
