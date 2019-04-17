@@ -9,6 +9,8 @@ import com.example.android.imagepractice.model.Movie;
 import com.example.android.imagepractice.recyclerview.basic.MovieViewHolder;
 import com.example.android.imagepractice.recyclerview.basic.MovieViewHolderBinder;
 import com.example.android.imagepractice.recyclerview.basic.MovieViewHolderFactory;
+import com.example.android.imagepractice.recyclerview.glide.GlideMovieViewHolderBinder;
+import com.example.android.imagepractice.recyclerview.glide.GlideMovieViewHolderFactory;
 import com.example.android.imagepractice.recyclerview.httpurlconnection.HUCMovieHolderFactory;
 import com.example.android.imagepractice.recyclerview.httpurlconnection.HUCMovieViewHolderBinder;
 import com.example.android.imagepractice.recyclerview.picasso.PicassoMovieViewHolderBinder;
@@ -29,6 +31,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieViewHolder> {
         mFactoryMap = new SparseArray<>();
         mFactoryMap.put(DownloadType.HTTP_URL_CONNECTION.type, new HUCMovieHolderFactory());
         mFactoryMap.put(DownloadType.PICASSO.type, new PicassoMovieViewHolderFactory());
+        mFactoryMap.put(DownloadType.GLIDE.type, new GlideMovieViewHolderFactory());
     }
 
     public void setMovies(List<Movie> movies) {
@@ -45,6 +48,8 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieViewHolder> {
             return new HUCMovieViewHolderBinder(movie.getDownloadType().getType(), movie);
         } else if(movie.getDownloadType().type == DownloadType.PICASSO.type) {
             return new PicassoMovieViewHolderBinder(movie.getDownloadType().getType(), movie);
+        } else if(movie.getDownloadType().type == DownloadType.GLIDE.type) {
+            return new GlideMovieViewHolderBinder(movie.getDownloadType().type, movie);
         }
         return null;
     }

@@ -5,6 +5,6 @@
     <string name="http_url_connection">HTTP URL Connection</string>
     <string name="fresco">Fresco</string>
     <string name="picasso">Picasso</string>
+\    <string name="todo">TODO</string>
     <string name="glide">Glide</string>
-    <string name="todo">TODO</string>
 </resources>

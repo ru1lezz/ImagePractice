@@ -4,9 +4,8 @@ import java.util.Random;
 
 public enum DownloadType {
     HTTP_URL_CONNECTION(0),
-    PICASSO(1);
-//    FRESCO(2),
-//    GLIDE(3);
+    PICASSO(1),
+    GLIDE(2);
 
     int type;
 
@@ -18,10 +17,10 @@ public enum DownloadType {
         return type;
     }
 
-    private static final int SIZE = values().length;
+    private static final int LENGTH = values().length;
     private static final Random RANDOM = new Random();
 
     public static DownloadType getRandomType() {
-        return values()[RANDOM.nextInt(SIZE)];
+        return values()[RANDOM.nextInt(LENGTH)];
     }
 }
